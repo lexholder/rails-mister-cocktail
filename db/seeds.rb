@@ -12,18 +12,23 @@ Ingredient.destroy_all
 
 puts 'seeding ingredients'
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-list = open(url).read
-ingredients = JSON.parse(list)
-
-ingredients['drinks'].each do |d|
-  Ingredient.create!(name: d.values[0])
+10.times do
+  Ingredient.create!(name: Faker::Creature::Animal.name)
 end
 
 puts 'seeding cocktails'
 
 10.times do
-  Cocktail.create!(name: Faker::Hipster.word)
+  Cocktail.create!(name: Faker::Address.street_name)
+end
+
+puts 'seeding doses'
+
+Cocktail.all.each do |c|
+  dose = Dose.new(description: Faker::Food.measurement)
+  dose.cocktail = c
+  dose.ingredient = Ingredient.all.sample
+  dose.save!
 end
 
 puts 'all done'

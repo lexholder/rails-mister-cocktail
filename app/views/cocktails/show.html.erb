@@ -1,0 +1,31 @@
+<div class="card-category">
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://d.newsweek.com/en/full/457653/american-bison.jpg)">
+    <h1><%= @cocktail[:name] %></h1>
+  </div>
+</div>
+
+
+
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href= "<%= cocktails_path %>" class="tab-underlined active">Get along now</a>
+  </li>
+  <li>
+    <a href= "<%= new_cocktail_dose_path(@cocktail) %>" class="tab-underlined active">Pony up your vittles</a>
+  </li>
+</ul>
+
+
+<div class="cards">
+  <div class="green">
+    <h3>Add to the Chuck Wagon:</h3>
+
+  <br>
+    <% @cocktail.doses.each do |c| %>
+      <ul><%= c.ingredient.name %><br><%= c.description %></ul>
+      <% end %>
+  <p><%= link_to "Delete", dose_path, method: "delete" %></p>
+</div>
+</div>
+
+

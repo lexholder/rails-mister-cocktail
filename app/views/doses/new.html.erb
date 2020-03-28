@@ -1,0 +1,9 @@
+<div class="container">
+<%= simple_form_for [ @cocktail, @dose ] do |f| %>
+  <%= f.input :description, label: "measurement" %>
+  <%= f.association :ingredient %>
+  <%= f.submit "Add your recipe", class: "btn btn-success" %>
+<% end %>
+
+<%= link_to "Home", cocktails_path, class: "btn btn-flat" %>
+</div>
