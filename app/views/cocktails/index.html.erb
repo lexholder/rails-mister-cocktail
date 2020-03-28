@@ -10,16 +10,16 @@
 
 <% @cocktails.each do |c|%>
   <div class="cards">
-    <div class="cards-category card-back">
+    <div class="cards-category">
       <div class="card-category2 container" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://www.yesterdaysgallery.com/pictures/medium/27941.jpg)">
         <p><%= link_to c[:name], cocktail_path(c[:id]) %></p>
           </div>
-            <!-- <div>
-              <br>
-              <i class="fas fa-cocktail"></i>
-              <p>difficulty: yellow belly</p>
-              <i class="fas fa-clock"></i>
-              <p>3 shakes of a lamb's tail</p>
+          <!-- <div>
+            <br>
+            <i class="fas fa-cocktail"></i>
+            <p>difficulty: yellow belly</p>
+            <i class="fas fa-clock"></i>
+            <p>3 shakes of a lamb's tail</p>
         </div> -->
       </div>
     </div>
